@@ -19,6 +19,5 @@ public class PostController {
     public Post savePost(@RequestBody Post post) {
         return postService.savePost(post);
     }
-
-
 }
+
