@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.*;
 //@RequestMapping("/api")
 public class PostController {
 
-    @Autowired
-    PostService postService;
-
+    
+    private final PostService postService;
+    public PostController(PostService postService){
+        this.postService = postService;
+    }
 
     @PostMapping("/posts")
     public Post savePost(@RequestBody Post post) {
         return postService.savePost(post);
     }
 }
+
 
